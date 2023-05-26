@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFrag">
+    <fragment
+        android:id="@+id/homeFrag"
+        android:name="com.example.flashlight.HomeFrag"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFrag_to_compassFrag"
+            app:destination="@id/compassFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/compassFrag"
+        android:name="com.example.flashlight.CompassFrag"
+        android:label="fragment_compass"
+        tools:layout="@layout/fragment_compass" >
+        <action
+            android:id="@+id/action_compassFrag_to_homeFrag"
+            app:destination="@id/homeFrag" />
+    </fragment>
+</navigation>

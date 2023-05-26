@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_frag_bg"
+    tools:context=".HomeFrag">
+
+
+    <ImageView
+        android:id="@+id/btn_on"
+        android:layout_width="217dp"
+        android:layout_height="223dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_torch_button_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/btn_off"
+        android:layout_width="217dp"
+        android:layout_height="223dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_torch_button_off"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_compass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_compass"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/img_compass"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/img_compass"
+        app:layout_constraintTop_toBottomOf="@+id/btn_off" />
+
+    <TextView
+        android:id="@+id/txt_battery_life"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_battery"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/img_battery"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/img_battery"
+        app:layout_constraintTop_toBottomOf="@+id/btn_off" />
+
+    <ImageView
+        android:id="@+id/img_compass"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_compass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_battery"
+        app:layout_constraintTop_toBottomOf="@+id/txt_compass" />
+
+    <ImageView
+        android:id="@+id/img_battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_battery"
+        app:layout_constraintEnd_toStartOf="@+id/img_compass"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_battery_life" />
+
+    <TextView
+        android:id="@+id/txt_battery_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_battery_percentage"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/img_battery"
+        app:layout_constraintStart_toStartOf="@+id/img_battery"
+        app:layout_constraintTop_toBottomOf="@+id/img_battery" />
+
+    <ImageView
+        android:id="@+id/img_light_off"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_icon_off"
+        app:layout_constraintBottom_toTopOf="@+id/img_bottom_slider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_off"
+        app:layout_constraintVertical_bias="0.838" />
+
+    <ImageView
+        android:id="@+id/img_light_on"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_icon_on"
+        app:layout_constraintBottom_toTopOf="@+id/img_bottom_slider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_off"
+        app:layout_constraintVertical_bias="0.826" />
+
+    <TextView
+        android:id="@+id/txt_torch_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#7E8184"
+        android:text="@string/txt_torch_off"
+        app:layout_constraintBottom_toTopOf="@+id/btn_off"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/txt_torch_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="@string/txt_torch_on"
+        app:layout_constraintBottom_toTopOf="@+id/btn_off"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/img_bottom_slider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bottom_slider"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@null" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
