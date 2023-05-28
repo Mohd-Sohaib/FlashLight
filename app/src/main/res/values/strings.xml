@@ -7,4 +7,11 @@
     <string name="txt_torch_off">Torch Off</string>
     <string name="txt_torch_on">Torch On</string>
     <string name="txt_compass">Compass</string>
+    <string name="sign">o</string>
+    <string name="direction_names">NorthEast</string>
+    <string name="degree">35</string>
+    <string name="txt_question">Do You Like Flashlight App?</string>
+    <string name="txt_rate">Rate Your Experience</string>
+    <string name="later">Later</string>
+    <string name="submit">Submit</string>
 </resources>

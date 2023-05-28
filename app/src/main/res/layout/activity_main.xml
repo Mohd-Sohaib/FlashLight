@@ -32,7 +32,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="125dp"
-                app:srcCompat="@drawable/ic_share" />
+                app:srcCompat="@drawable/ic_share"
+                android:contentDescription="@null" />
 
             <ImageView
                 android:id="@+id/rating"
@@ -40,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginEnd="35dp"
-                app:srcCompat="@drawable/ic_rating_thumb" />
+                app:srcCompat="@drawable/ic_rating_thumb"
+                android:contentDescription="@null"/>
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>

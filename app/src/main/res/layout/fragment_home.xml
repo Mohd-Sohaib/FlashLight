@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/btn_on"
-        android:layout_width="217dp"
-        android:layout_height="223dp"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
         android:contentDescription="@null"
         android:src="@drawable/ic_torch_button_on"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,8 +23,8 @@
 
     <ImageView
         android:id="@+id/btn_off"
-        android:layout_width="217dp"
-        android:layout_height="223dp"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
         android:contentDescription="@null"
         android:src="@drawable/ic_torch_button_off"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,8 +60,9 @@
         android:id="@+id/img_compass"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="11dp"
         android:contentDescription="@null"
+        android:layout_marginEnd="30dp"
         android:src="@drawable/ic_compass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -72,7 +73,9 @@
         android:id="@+id/img_battery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         android:contentDescription="@null"
         android:src="@drawable/ic_battery"
         app:layout_constraintEnd_toStartOf="@+id/img_compass"
@@ -154,5 +157,72 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/line_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:layout_marginStart="19dp"
+        android:src="@drawable/ic_battery_line"
+        app:layout_constraintBottom_toBottomOf="@+id/img_battery"
+        app:layout_constraintStart_toStartOf="@+id/img_battery"
+        app:layout_constraintTop_toBottomOf="@+id/txt_battery_life"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <ImageView
+        android:id="@+id/line_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_battery_line"
+        app:layout_constraintBottom_toBottomOf="@+id/img_battery"
+        app:layout_constraintStart_toStartOf="@+id/line_1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_battery_life"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <ImageView
+        android:id="@+id/line_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_battery_line"
+        app:layout_constraintBottom_toBottomOf="@+id/img_battery"
+        app:layout_constraintStart_toStartOf="@+id/line_2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_battery_life"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <ImageView
+        android:id="@+id/line_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_battery_line"
+        app:layout_constraintBottom_toBottomOf="@+id/img_battery"
+        app:layout_constraintStart_toStartOf="@+id/line_3"
+        app:layout_constraintTop_toBottomOf="@+id/txt_battery_life"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <ImageView
+        android:id="@+id/line_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_battery_line"
+        app:layout_constraintBottom_toBottomOf="@+id/img_battery"
+        app:layout_constraintStart_toStartOf="@+id/line_4"
+        app:layout_constraintTop_toBottomOf="@+id/txt_battery_life"
+        app:layout_constraintVertical_bias="0.612" />
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

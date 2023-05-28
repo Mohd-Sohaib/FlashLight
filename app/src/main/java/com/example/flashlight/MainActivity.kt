@@ -13,8 +13,11 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.rating.setOnClickListener {
+            val bottomSheet =  BottomSheetRatingFrag()
+            bottomSheet.show(supportFragmentManager,bottomSheet.tag)
+        }
     }
-
     override fun onDestroy() {
         super.onDestroy()
         _binding = null

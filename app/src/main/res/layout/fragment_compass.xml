@@ -1,14 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/home_frag_bg"
     tools:context=".CompassFrag">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/main_compass"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_main_compass"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.555" />
+
+    <ImageView
+        android:id="@+id/sub_hand"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:src="@drawable/ic_compass_sub_hand"
+        app:layout_constraintBottom_toBottomOf="@+id/main_compass"
+        app:layout_constraintEnd_toEndOf="@+id/main_compass"
+        app:layout_constraintStart_toStartOf="@+id/main_compass"
+        app:layout_constraintTop_toTopOf="@+id/main_compass"
+        android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/main_hand"
+        android:layout_width="156dp"
+        android:layout_height="152dp"
+        android:contentDescription="@null"
+        android:rotation="6"
+        android:src="@drawable/ic_compass_hand"
+        app:layout_constraintBottom_toBottomOf="@+id/main_compass"
+        app:layout_constraintEnd_toEndOf="@+id/main_compass"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="@+id/main_compass"
+        app:layout_constraintTop_toTopOf="@+id/main_compass"
+        app:layout_constraintVertical_bias="0.441" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        android:text="@string/degree"
+        app:layout_constraintEnd_toEndOf="@+id/main_compass"
+        app:layout_constraintStart_toStartOf="@+id/main_compass"
+        app:layout_constraintTop_toBottomOf="@+id/main_compass" />
+
+    <TextView
+        android:id="@+id/direction_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:text="@string/direction_names"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/o_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:text="@string/sign"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
