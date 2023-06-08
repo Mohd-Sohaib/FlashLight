@@ -12,6 +12,6 @@
     <string name="degree">35</string>
     <string name="txt_question">Do You Like Flashlight App?</string>
     <string name="txt_rate">Rate Your Experience</string>
-    <string name="later">Later</string>
+    <string name="later"><u>Later</u></string>
     <string name="submit">Submit</string>
 </resources>
