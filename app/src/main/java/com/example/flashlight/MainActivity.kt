@@ -2,6 +2,12 @@ package com.example.flashlight
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.flashlight.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.rating.setOnClickListener {
-            val bottomSheet =  BottomSheetRatingFrag()
-            bottomSheet.show(supportFragmentManager,bottomSheet.tag)
+            val bottomSheetRating =  BottomSheetRatingFrag()
+            bottomSheetRating.show(supportFragmentManager,bottomSheetRating.tag)
         }
     }
     override fun onDestroy() {

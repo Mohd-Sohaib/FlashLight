@@ -17,14 +17,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.getSystemService
 import androidx.navigation.fragment.findNavController
 import com.example.flashlight.databinding.FragmentHomeBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.lang.reflect.Parameter
 
 
-class HomeFrag : Fragment() {
+class HomeFrag : BottomSheetDialogFragment() {
     private var _binding : FragmentHomeBinding ?= null
     private val binding get() = _binding!!
 
@@ -118,6 +120,14 @@ class HomeFrag : Fragment() {
             binding.line4.visibility = View.VISIBLE
             binding.line5.visibility = View.VISIBLE
         }
+
+        requireActivity().onBackPressedDispatcher
+            .addCallback(this, object : OnBackPressedCallback(true){
+                override fun handleOnBackPressed() {
+                    val bottomSheetExit = BottomSheetExitFrag()
+                    bottomSheetExit.show(fragmentManager!!,bottomSheetExit.tag)
+                }
+            })
     }
 
   

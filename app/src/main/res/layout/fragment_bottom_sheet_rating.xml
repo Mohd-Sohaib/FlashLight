@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/home_frag_bg"
+    android:background="@drawable/rounded_dialog"
     tools:context=".BottomSheetRatingFrag">
 
     <ImageView
@@ -53,6 +53,7 @@
         android:layout_marginBottom="25dp"
         android:numStars="5"
         android:stepSize="1"
+        android:rating="5"
         style="@style/CustomRatingBarStyle"
         app:layout_constraintBottom_toTopOf="@+id/img_submit"
         app:layout_constraintEnd_toEndOf="@+id/textViewRate"
