@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/rounded_dialog"
-    tools:context=".BottomSheetRatingFrag">
+    tools:context=".ui.fragments.BottomSheetRatingFrag">
 
     <ImageView
         android:id="@+id/img_star_top"

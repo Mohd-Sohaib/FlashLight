@@ -1,29 +1,22 @@
-package com.example.flashlight
+package com.example.flashlight.ui.fragments
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.pm.PackageManager
-import android.graphics.Camera
 import android.hardware.camera2.CameraAccessException
 import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CameraManager.TorchCallback
 import android.os.BatteryManager
-import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.content.getSystemService
 import androidx.navigation.fragment.findNavController
+import com.example.flashlight.R
 import com.example.flashlight.databinding.FragmentHomeBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import java.lang.reflect.Parameter
 
 
 class HomeFrag : BottomSheetDialogFragment() {
@@ -47,8 +40,6 @@ class HomeFrag : BottomSheetDialogFragment() {
         if(!isFlashAvailable){
            Toast.makeText(requireContext(),"Flash Not found...!", Toast.LENGTH_SHORT).show()
         }
-
-
         batteryManager = activity?.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
 
         cameraManager = activity?.getSystemService(Context.CAMERA_SERVICE) as CameraManager

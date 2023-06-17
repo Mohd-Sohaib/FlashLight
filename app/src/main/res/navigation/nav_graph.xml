@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFrag">
     <fragment
         android:id="@+id/homeFrag"
-        android:name="com.example.flashlight.HomeFrag"
+        android:name="com.example.flashlight.ui.fragments.HomeFrag"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -15,8 +15,8 @@
     </fragment>
     <fragment
         android:id="@+id/compassFrag"
-        android:name="com.example.flashlight.CompassFrag"
-        android:label="fragment_compass"
+        android:name="com.example.flashlight.ui.fragments.CompassFrag"
+        android:label="Compass"
         tools:layout="@layout/fragment_compass" >
         <action
             android:id="@+id/action_compassFrag_to_homeFrag"

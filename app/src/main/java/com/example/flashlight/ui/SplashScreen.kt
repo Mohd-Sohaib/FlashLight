@@ -1,4 +1,4 @@
-package com.example.flashlight
+package com.example.flashlight.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,7 +9,6 @@ import android.os.Looper
 import android.view.View
 import android.view.WindowManager
 import com.example.flashlight.databinding.ActivitySplashScreenBinding
-import kotlin.time.Duration.Companion.milliseconds
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
@@ -37,7 +36,7 @@ class SplashScreen : AppCompatActivity() {
 
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         },4000)

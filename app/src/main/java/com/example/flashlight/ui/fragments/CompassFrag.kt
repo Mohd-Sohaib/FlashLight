@@ -1,4 +1,4 @@
-package com.example.flashlight
+package com.example.flashlight.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

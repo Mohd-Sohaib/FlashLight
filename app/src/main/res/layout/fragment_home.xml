@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/home_frag_bg"
-    tools:context=".HomeFrag">
+    tools:context=".ui.fragments.HomeFrag"
+    tools:ignore="MissingClass">
 
 
     <ImageView
@@ -93,18 +94,17 @@
         app:layout_constraintStart_toStartOf="@+id/img_battery"
         app:layout_constraintTop_toBottomOf="@+id/img_battery" />
 
+
     <ImageView
         android:id="@+id/img_light_off"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:contentDescription="@null"
         android:src="@drawable/ic_icon_off"
-        app:layout_constraintBottom_toTopOf="@+id/img_bottom_slider"
+        app:layout_constraintBottom_toTopOf="@+id/ruler_picker"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_off"
-        app:layout_constraintVertical_bias="0.838" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_on" />
 
     <ImageView
         android:id="@+id/img_light_on"
@@ -112,12 +112,27 @@
         android:layout_height="35dp"
         android:contentDescription="@null"
         android:src="@drawable/ic_icon_on"
-        app:layout_constraintBottom_toTopOf="@+id/img_bottom_slider"
+        app:layout_constraintBottom_toTopOf="@+id/ruler_picker"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_off"
-        app:layout_constraintVertical_bias="0.826" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_on" />
+
+    <com.kevalpatel2106.rulerpicker.RulerValuePicker
+        android:id="@+id/ruler_picker"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/ruler_color"
+        app:indicator_color="@android:color/white"
+        app:indicator_interval="14dp"
+        app:indicator_width="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:max_value="50"
+        app:min_value="0"
+        app:notch_color="@android:color/white"
+        app:ruler_text_size="6sp" />
 
     <TextView
         android:id="@+id/txt_torch_off"
@@ -147,16 +162,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/img_bottom_slider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_bottom_slider"
-        android:scaleY="1.2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@null" />
+
 
     <ImageView
         android:id="@+id/line_1"
