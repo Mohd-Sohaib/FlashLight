@@ -22,34 +22,12 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.displayOptions.toString()
 
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        val config = AppBarConfiguration(navController.graph)
+//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment
+//        val navController = navHostFragment.navController
+//        val config = AppBarConfiguration(navController.graph)
 
-        findViewById<Toolbar>(R.id.toolbar).setupWithNavController(navController,config)
-    }
-
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_option, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-      when(item.itemId){
-          R.id.rating -> {
-              val bottomSheetRating =  BottomSheetRatingFrag()
-              bottomSheetRating.show(supportFragmentManager,bottomSheetRating.tag)
-          }
-          R.id.share -> {
-              Toast.makeText(this,"Share Selected", Toast.LENGTH_SHORT).show()
-          }
-      }
-        return super.onOptionsItemSelected(item)
     }
 
     override fun onDestroy() {

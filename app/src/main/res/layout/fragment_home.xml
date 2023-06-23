@@ -8,6 +8,40 @@
     tools:context=".ui.fragments.HomeFrag"
     tools:ignore="MissingClass">
 
+    <ImageView
+        android:id="@+id/img_flashlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_bar_flashlight"
+        android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/img_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_rate"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toEndOf="@+id/img_flashlight"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_share"
+        android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/img_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="34dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_rating_thumb"
+        android:contentDescription="@null" />
 
     <ImageView
         android:id="@+id/btn_on"
@@ -135,11 +169,11 @@
         app:ruler_text_size="6sp" />
 
     <TextView
-        android:id="@+id/txt_torch_off"
+        android:id="@+id/txt_torch_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textColor="#7E8184"
+        android:textColor="@color/off_color"
         android:text="@string/txt_torch_off"
         app:layout_constraintBottom_toTopOf="@+id/btn_off"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,22 +181,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/txt_torch_on"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:text="@string/txt_torch_on"
-        app:layout_constraintBottom_toTopOf="@+id/btn_off"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-
 
     <ImageView
         android:id="@+id/line_1"

@@ -10,4 +10,5 @@
     <color name="home_frag_bg">#2D343C</color>
     <color name="yellow">#FFE600</color>
     <color name="ruler_color">#394149</color>
+    <color name="off_color">#7E8184</color>
 </resources>

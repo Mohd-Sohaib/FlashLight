@@ -3,6 +3,7 @@ package com.example.flashlight.ui.fragments
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.hardware.camera2.CameraAccessException
 import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CameraManager.TorchCallback
@@ -13,9 +14,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.flashlight.R
 import com.example.flashlight.databinding.FragmentHomeBinding
+import com.example.flashlight.ui.viewModel.MainViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
@@ -25,7 +30,7 @@ class HomeFrag : BottomSheetDialogFragment() {
 
     private lateinit var cameraManager: CameraManager
     private lateinit var cameraId : String
-    private lateinit var batteryManager: BatteryManager
+    private lateinit var viewModel : MainViewModel
     private lateinit var torchCallback: TorchCallback
 
 
@@ -40,7 +45,10 @@ class HomeFrag : BottomSheetDialogFragment() {
         if(!isFlashAvailable){
            Toast.makeText(requireContext(),"Flash Not found...!", Toast.LENGTH_SHORT).show()
         }
-        batteryManager = activity?.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
+
+        //creating instance of our ViewModel
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        viewModel.getBatteryStatus()
 
         cameraManager = activity?.getSystemService(Context.CAMERA_SERVICE) as CameraManager
         try {
@@ -57,7 +65,6 @@ class HomeFrag : BottomSheetDialogFragment() {
 
         binding.btnOn.visibility = View.INVISIBLE
         binding.imgLightOn.visibility = View.INVISIBLE
-        binding.txtTorchOn.visibility = View.INVISIBLE
         binding.line1.visibility = View.INVISIBLE
         binding.line2.visibility = View.INVISIBLE
         binding.line3.visibility = View.INVISIBLE
@@ -69,8 +76,9 @@ class HomeFrag : BottomSheetDialogFragment() {
             binding.btnOn.visibility = View.VISIBLE
             binding.imgLightOff.visibility = View.INVISIBLE
             binding.imgLightOn.visibility = View.VISIBLE
-            binding.txtTorchOff.visibility = View.INVISIBLE
-            binding.txtTorchOn.visibility = View.VISIBLE
+            binding.txtTorchStatus.visibility = View.VISIBLE
+            binding.txtTorchStatus.text = "Torch On"
+            binding.txtTorchStatus.setTextColor(resources.getColor(R.color.white))
             flashLightOFF()
         }
 
@@ -79,8 +87,9 @@ class HomeFrag : BottomSheetDialogFragment() {
             binding.btnOff.visibility = View.VISIBLE
             binding.imgLightOn.visibility = View.INVISIBLE
             binding.imgLightOff.visibility = View.VISIBLE
-            binding.txtTorchOn.visibility = View.INVISIBLE
-            binding.txtTorchOff.visibility = View.VISIBLE
+            binding.txtTorchStatus.visibility = View.VISIBLE
+            binding.txtTorchStatus.text = "Torch Off"
+            binding.txtTorchStatus.setTextColor(resources.getColor(R.color.off_color))
             flashLightON()
         }
 
@@ -88,30 +97,35 @@ class HomeFrag : BottomSheetDialogFragment() {
             findNavController().navigate(R.id.action_homeFrag_to_compassFrag)
         }
 
-        val percentage = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
-        binding.txtBatteryPercentage.text = "$percentage%"
-        if(percentage <= 20){
-            binding.line1.visibility = View.VISIBLE
-        }else if(percentage < 45){
-            binding.line1.visibility = View.VISIBLE
-            binding.line2.visibility = View.VISIBLE
-        }else if(percentage < 65){
-            binding.line1.visibility = View.VISIBLE
-            binding.line2.visibility = View.VISIBLE
-            binding.line3.visibility = View.VISIBLE
-        }else if(percentage <= 90){
-            binding.line1.visibility = View.VISIBLE
-            binding.line2.visibility = View.VISIBLE
-            binding.line3.visibility = View.VISIBLE
-            binding.line4.visibility = View.VISIBLE
-        }else{
-            binding.line1.visibility = View.VISIBLE
-            binding.line2.visibility = View.VISIBLE
-            binding.line3.visibility = View.VISIBLE
-            binding.line4.visibility = View.VISIBLE
-            binding.line5.visibility = View.VISIBLE
-        }
+        //observing the percentage
+        viewModel.percentage().observe(this, Observer {
+            val percentage = it.toString()
+            binding.txtBatteryPercentage.text = "$it%"
 
+            if(percentage <= 20.toString()){
+                binding.line1.visibility = View.VISIBLE
+            }else if(percentage < 45.toString()){
+                binding.line1.visibility = View.VISIBLE
+                binding.line2.visibility = View.VISIBLE
+            }else if(percentage < 65.toString()){
+                binding.line1.visibility = View.VISIBLE
+                binding.line2.visibility = View.VISIBLE
+                binding.line3.visibility = View.VISIBLE
+            }else if(percentage <= 90.toString()){
+                binding.line1.visibility = View.VISIBLE
+                binding.line2.visibility = View.VISIBLE
+                binding.line3.visibility = View.VISIBLE
+                binding.line4.visibility = View.VISIBLE
+            }else{
+                binding.line1.visibility = View.VISIBLE
+                binding.line2.visibility = View.VISIBLE
+                binding.line3.visibility = View.VISIBLE
+                binding.line4.visibility = View.VISIBLE
+                binding.line5.visibility = View.VISIBLE
+            }
+        })
+
+        //controlling back-pressed
         requireActivity().onBackPressedDispatcher
             .addCallback(this, object : OnBackPressedCallback(true){
                 override fun handleOnBackPressed() {
@@ -119,6 +133,15 @@ class HomeFrag : BottomSheetDialogFragment() {
                     bottomSheetExit.show(fragmentManager!!,bottomSheetExit.tag)
                 }
             })
+
+        binding.imgRate.setOnClickListener {
+            val bottomSheetRating =  BottomSheetRatingFrag()
+            bottomSheetRating.show(fragmentManager!!,bottomSheetRating.tag)
+        }
+
+        binding.imgShare.setOnClickListener {
+            Toast.makeText(requireContext(),"Share Selected!!" , Toast.LENGTH_SHORT).show()
+        }
     }
 
   
